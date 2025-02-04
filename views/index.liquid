@@ -1,14 +1,41 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+    <div class="card-container">
+        <section class="card">
 
-  <p>{{ person.name }}</p>
+            <article class="front">
+                <img src="img/me.jpg" alt="Foto" class="profile-pic">
+                <h1>{{ person.name }}</h1>
+                <h3>FDND'ER op HvA</h3>
+                <p>flip me</p>
+            </article>
 
-  <footer></footer>
-</article>
+            <article class="back">
+                <h2>Over mij</h2>
+                <ul class="button-list">
+                    <li><button class="theme-select" data-section="hobbys"><span>📺</span>Hobby's</button></li>
+                    <li><button class="theme-select" data-section="werkervaring"><span>💼</span>Werkervaring</button></li>
+                    <li><button class="theme-select" data-section="kennis"><span>💻</span>Kennis</button></li>
+                </ul>
+                
+                <div class="content">
+                    <div id="hobbys" class="section-content">
+                        <p>Mijn hobby's zijn films kijken, gamen, karten en sporten. Mijn favoriete film franchise is Starwars. Ik heb dan ook (bijna) alles wel gezien :D</p>
+                        <button class="back-button">Terug</button>
+                    </div>
+                    <div id="werkervaring" class="section-content">
+                        <p>Ik ben een afgestuurde software developer die in zijn vrije tijd al een paar website's heeft gebouwd voor klanten. Momenteel heb ik een bijbaantje in de horeca en ben ik werkzaam geweest als bezorger en vakkenvuller.</p>
+                        <button class="back-button">Terug</button>
+                    </div>
+                    
+                    <div id="kennis" class="section-content">
+                        <p>Mijn kennisgebieden zijn HTML, CSS, JavaScript (Ook React), Python en PHP (Met een beetje Laravel).</p>
+                        <button class="back-button">Terug</button>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+    </div>
 
 {% render 'partials/foot.liquid' %}
