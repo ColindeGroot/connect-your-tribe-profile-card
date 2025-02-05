@@ -18,7 +18,7 @@ const personResponseJSON = await personResponse.json()
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(personResponseJSON)
-
+const customProp = JSON.parse(personResponseJSON.data.custom)
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
@@ -40,7 +40,12 @@ app.set('views', './views')
 // In je visitekaartje was dit waarschijnlijk index.html
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', {person:personResponseJSON.data,custom: customProp})
+})
+
+app.get('/oefenen', async function (request, response) {
+  // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+  response.render('oefenen.liquid', {person:personResponseJSON.data,custom: customProp})
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
@@ -67,3 +72,4 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+

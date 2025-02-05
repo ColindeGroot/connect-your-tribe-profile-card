@@ -1,6 +1,7 @@
 {% render 'partials/head.liquid' %}
 
     <div class="card-container">
+        <details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
         <section class="card">
 
             <article class="front">
