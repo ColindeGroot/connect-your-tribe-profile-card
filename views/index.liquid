@@ -1,26 +1,24 @@
 {% render 'partials/head.liquid' %}
 
 <div class="card-container">
-    <details>
-        <summary>Data</summary>
-        <pre>{{ person | json:4 }}</pre>
-    </details>
     <section class="card">
 
         <article class="front">
 
             <div class="circle">
                 <img class="avatar" src="{{person.avatar}}" alt="profiel foto">
-                <p class="spin-text first-spin">FRONTENDER</p>
-                <p class="spin-text second-spin">FRONTENDER</p>
-                <p class="spin-text third-spin">FRONTENDER</p>
-                <p class="spin-text fourth-spin">FRONTENDER</p>
+                <p class="spin-text first-spin">{{ custom.study }}</p>
+                <p class="spin-text second-spin">{{ custom.study }}</p>
+                <p class="spin-text third-spin">{{ custom.study }}</p>
+                <p class="spin-text fourth-spin">{{ custom.study }}</p>
             </div>
 
             <div class="front-info"> <!-- container voor flex -->
                 <h1>{{ person.name }}</h1>
-                <p>flip me</p>
+                <p>{{ custom.about}}</p>
             </div>
+
+            <p>flip voor meer &rarr;</p>
 
         </article>
 
